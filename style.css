@@ -1,0 +1,12 @@
+body {
+    width: fit-content;
+    height: fit-content;
+    border-style: solid;
+    border-color: rgb(133, 84, 11);
+    padding: 10px;
+    margin: auto;
+}
+
+h1 {
+    margin-top: 0px;
+}
