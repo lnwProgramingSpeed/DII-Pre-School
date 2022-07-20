@@ -2,10 +2,33 @@ import java.util.Scanner;
 
 public class TomGPA {
 
+    public static double GradeChange(String Grade) {
+        double GradePoint = 0;
+        switch (Grade) {
+            case "A":
+            GradePoint = 4;
+                break;
+            case "B":
+            GradePoint = 3;
+                break;
+            case "C":
+            GradePoint = 2;
+                break;
+            case "D":
+            GradePoint = 1;
+                break;
+            case "F":
+            GradePoint = 0;
+                break;
+
+        }
+        return GradePoint;
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        double Mgrade=0,Sgrade=0;
+        double Mgrade = 0, Sgrade = 0;
 
         System.out.print("Math credits: ");
         double Math = scan.nextDouble();
@@ -14,49 +37,13 @@ public class TomGPA {
 
         System.out.print("Tom's math grade: ");
         String MathGrade = scan.next();
+        Mgrade = GradeChange(MathGrade);
 
-        switch(MathGrade){
-            case "A":
-                Mgrade = 4;
-                break;
-            case "B":
-                Mgrade = 3;
-                break;
-            case "C":
-                Mgrade = 2;
-                break;
-            case "D":
-                Mgrade = 1;
-                break;
-            case "F":
-                Mgrade = 0;
-                break;
-
-        }
-
-        System.out.print("Tom's social grade: " );
+        System.out.print("Tom's social grade: ");
         String SocGrade = scan.next();
+        Sgrade = GradeChange(SocGrade);
 
-        switch(SocGrade){
-            case "A":
-                Sgrade = 4;
-                break;
-            case "B":
-                Sgrade = 3;
-                break;
-            case "C":
-                Sgrade = 2;
-                break;
-            case "D":
-                Sgrade = 1;
-                break;
-            case "F":
-                Sgrade = 0;
-                break;
-
-        }
-
-        double GPA = ((Mgrade*Math)+(Sgrade*Social))/(Math+Social);
+        double GPA = ((Mgrade * Math) + (Sgrade * Social)) / (Math + Social);
 
         System.out.print("Tom's GPA is " + GPA);
     }
