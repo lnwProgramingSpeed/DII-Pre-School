@@ -15,7 +15,7 @@ public class EvenOdd {
                 break;
             }
 
-            double randomNum = s;
+            double randomNum = s;//5 >>> 53
             randomNum = randomNum - 48;
             //Char change into int make them binary form so minus 48 which is 0 in int made them a round number
 
