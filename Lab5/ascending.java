@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ascending {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -8,13 +9,13 @@ public class ascending {
         int num3 = scan.nextInt();
 
         int sorted = 0;
-        for(int i=0; sorted<3; i++){
+        for (int i = 0; sorted < 3; i++) {
             int ascendingNum = 0;
-            if(i == num1 || i == num2 || i == num3){
+            if (i == num1 || i == num2 || i == num3) {
                 sorted++;
                 ascendingNum++;
-                for(int j=0; j<ascendingNum; j++){
-                    System.out.print(i+" ");
+                for (int j = 0; j < ascendingNum; j++) {
+                    System.out.print(i + " ");
                 }
             }
         }
