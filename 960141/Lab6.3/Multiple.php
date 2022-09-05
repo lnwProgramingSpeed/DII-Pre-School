@@ -1,7 +1,9 @@
 <?php
-    $NUM = $_POST['num'];
+    $NUM = $_POST['number'];
+    $i = 1;
 
-    for (int $i = 1; $i<=12; $i++){
+    echo "Multiplication " . $NUM . "* 12 <br>";
+    for ($i = 1; $i<=12; $i++){
         echo "$NUM * $i = ".$i*$NUM."<br>";
     }
 ?>
