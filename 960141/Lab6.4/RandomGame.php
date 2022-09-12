@@ -14,7 +14,7 @@
         
     }
 
-    if($check<0){
+    if($chek>0){
         echo "<br>You are the Winner <br> Answer is $guest <br>";
     } else {
         echo "<br>You are the Loser <br> Try again <br>";
