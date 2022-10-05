@@ -6,7 +6,7 @@ if (isset($_SESSION['warning'])) {
 }
 ?>
 <form action="check_login.php" method="post">
-    <table>
+    <table align="center">
         <tr>
             <td>Username</td>
             <td><input type="text" name="a" /></td>
@@ -16,8 +16,11 @@ if (isset($_SESSION['warning'])) {
             <td><input type="text" name="b" /></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Submit" />
+            <td colspan="2" align="center">
+                <input type="submit" name="button" id="button" value="Submit" />
                 <input type="reset" name="button2" id="button2" value="Reset" />
+                <br><a href="index.php">Back</a>
+                
             </td>
         </tr>
     </table>

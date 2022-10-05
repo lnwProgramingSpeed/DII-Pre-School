@@ -2,7 +2,7 @@
 session_start();
 require_once "config.php";
 if (isset($_SESSION['level'])) {
-    $userQuery = "Select * from position";
+    $userQuery = "Select * from employee";
     $result = mysqli_query($connect, $userQuery);
     if (!$result) {
         die("Could not successfully run the query $userQuery" . mysqli_error($connect));
@@ -11,15 +11,15 @@ if (isset($_SESSION['level'])) {
         echo "No records were found with query $userQuery";
     } else {
         echo "<table align=\"center\" cellspacing = \"0\" border = \"1\">";
-        echo "<tr bgcolor=\"#D4DFFF\"><th>Faculty ID</th><th>Faculty
-    Name</th><th>Update</th><th>Delete</th></tr>";
+        echo "<tr bgcolor=\"#D4DFFF\"><th>Last Name</th><th>First Name</th><th>Position</th><th>Update</th><th>Delete</th></tr>";
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr><td>" . $row['fac_ID'] . "</td><td>"
-                . $row['fac_name'] . "</td>";
+            echo "<tr><td>" . $row['lname'] . "</td><td>"
+                . $row['fname'] ."</td><td>"
+                . $row['position'] ."</td>" ;
             //for update and delete
-            echo "<td><a href=\"update_data.php?id=" . $row['fac_ID'] . "\">";
+            echo "<td><a href=\"update_data.php?id=" . $row['lname'] . "\">";
             echo "Update</a></td>";
-            echo "<td><a href=\"delete_data.php?id=" . $row['fac_ID'] . "\">";
+            echo "<td><a href=\"delete_data.php?id=" . $row['lname'] . "\">";
             echo "Delete</a></td></tr>";
         }
         echo "</table>";

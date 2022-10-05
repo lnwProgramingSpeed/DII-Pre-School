@@ -4,7 +4,7 @@ require_once "config.php";
 $a = $_POST['a'];
 $b = $_POST['b'];
 
-$sql="SELECT * FROM acc WHERE uname = '$a' AND pword = '$b' ";
+$sql="SELECT * FROM systemuser WHERE uname = '$a' AND pword = '$b' ";
 
 $query = mysqli_query($connect, $sql);
 
@@ -14,9 +14,14 @@ if(mysqli_num_rows($query) > 0){
     $u=$row['uname'];
     $p=$row['pword'];
     $l=$row['level'];
+    $sf=$row['sfname'];
+    $sl=$row['slname'];
 
-    $_SESSION['level']=$l;
-    header("Location: show_faculty.php");
+    $_SESSION['uname'] = $u;
+    $_SESSION['level'] = $l;
+    $_SESSION['sfname'] = $sf;
+    $_SESSION['slname'] = $sl;
+    header("Location: index.php");
     } else {
 
     $_SESSION['warning'] = 'Username or password are not correct. Please try again !!!!!!!';

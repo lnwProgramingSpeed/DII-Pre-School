@@ -3,13 +3,13 @@ require_once "config.php";
 
 $fac_ID = $_GET['id']; //get $id from an update link
 
-$userQuery = "Select * from lab where fac_id ='$fac_ID'";
+$userQuery = "Select * from position where fac_id ='$fac_ID'";
 $result = mysqli_query($connect, $userQuery);
 
 if (!$result) {
-    die("Could not successfully run the query $userQuery" . mysqli_error($connect));
+    die("<p align=\"center\">Could not successfully run the query $userQuery" . mysqli_error($connect) . "</p>");
 } else {
-    echo "Update data<br><br>";
+    echo "<p align=\"center\">Update data<br><br>";
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
     
@@ -18,9 +18,9 @@ if (!$result) {
 
         <head>
 
-        <body>
+        <body >
             <form name="form1" method="post" action="update_data_submit.php?id=<?php echo $fac_ID; ?>">
-                <table width="416" border="0">
+                <table width="416" border="0" align="center">
                     <tr>
                         <td width="160">Faculty Name</td>
                         <td width="246"><input type="text" name="fac_name" value="<?php echo $row['fac_name']; ?>"></td>
@@ -35,7 +35,7 @@ if (!$result) {
 <?php
     } else {
         echo "Not found this record<br><br>";
-        echo "<a href=\"show_faculty.php\">Go back to display all faculty</a>";
+        echo "<a href=\"show_faculty.php\">Go back to display all faculty</a></p>";
     }
 } // end else
 ?>
